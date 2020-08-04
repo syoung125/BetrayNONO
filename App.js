@@ -21,6 +21,7 @@ export default function App() {
   //   super(props);
   // }
   // gang
+  // chocopie
   if (fontsLoaded) {
     return (
       <Navigator>
