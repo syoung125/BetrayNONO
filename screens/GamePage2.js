@@ -41,6 +41,7 @@ const GamePage2 = ({ navigation }) => {
     Animated.timing(animation.current, {
       toValue: progress,
       duration: 100,
+      useNativeDriver: false,
     }).start();
   }, [progress]);
 
