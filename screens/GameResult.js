@@ -1,11 +1,12 @@
 import React from "react";
+import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import StatisticsBox from "../component/StatisticsBox";
 
 export default function GameResult() {
   return (
-    <View style={styles.container}>
+    <View style={globalStyle.container}>
       <StatusBar style="auto" />
       <View style={styles.resultContainer}>
         <View style={styles.statisticsContainer}>
@@ -38,10 +39,6 @@ export default function GameResult() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#59ADFF",
-  },
   resultContainer: {
     flex: 9,
   },

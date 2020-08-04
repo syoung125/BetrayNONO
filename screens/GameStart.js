@@ -1,4 +1,5 @@
 import React from "react";
+import globalStyle from "../styles/Styles";
 import {
   StyleSheet,
   Text,
@@ -9,7 +10,6 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import colors from "../assets/colors";
 import images from "../assets/images";
 import strings from "../assets/string";
 import Logo from "../component/Logo";
@@ -31,7 +31,7 @@ export default class GameStart extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={globalStyle.container}>
         {/* <LinearGradient colors={['#91eae4', '#86a8e7', '#7f7fd5']} 
                 style={styles.gContainer}
                 start={{ x: 0, y: 0 }}
@@ -52,10 +52,14 @@ export default class GameStart extends React.Component {
                   this.props.navigation.navigate("GamePage");
                 }}
               >
-                <LinearGradient colors={['transparent','#dc13f0']} start={[0, 1]} end={[1, 0]} style={styles.gradient}>
+                <LinearGradient
+                  colors={["transparent", "#dc13f0"]}
+                  start={[0, 1]}
+                  end={[1, 0]}
+                  style={styles.gradient}
+                >
                   <Text style={styles.btnStyle}>시작하기</Text>
                 </LinearGradient>
-                
               </TouchableOpacity>
               <View style={styles.btnRowContainer}>
                 <TouchableOpacity
@@ -84,11 +88,6 @@ export default class GameStart extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#59ADFF",
-    margin: "auto",
-  },
   gContainer: {
     flex: 1,
   },
@@ -99,25 +98,24 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     alignItems: "center",
-
   },
   title1: {
     fontFamily: "Capriola-Regular",
     fontSize: 48,
     marginTop: 50,
     fontWeight: "600",
-    color: 'white',
-    textShadowColor: 'grey',
-    textShadowOffset: {width: -1, height: 3},
+    color: "white",
+    textShadowColor: "grey",
+    textShadowOffset: { width: -1, height: 3 },
     textShadowRadius: 7,
   },
   title2: {
     fontFamily: "Capriola-Regular",
     fontSize: 24,
     marginTop: 10,
-    color: 'white',
-    textShadowColor: 'grey',
-    textShadowOffset: {width: -1, height: 3},
+    color: "white",
+    textShadowColor: "grey",
+    textShadowOffset: { width: -1, height: 3 },
     textShadowRadius: 7,
   },
   mainImage: {
@@ -127,8 +125,8 @@ const styles = StyleSheet.create({
     marginBottom: 60,
   },
   btnContainer: {
-    alignItems: 'center',
-    flex: 1
+    alignItems: "center",
+    flex: 1,
   },
   btnStartBg: {
     alignItems: "center",
@@ -137,14 +135,14 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: "white",
     margin: 10,
   },
   btnRowContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: 'center',
-    marginTop:5,
+    alignItems: "center",
+    marginTop: 5,
   },
   btnLoginBg: {
     alignItems: "center",
@@ -153,7 +151,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: "white",
     marginRight: 20,
   },
   btnSignUpBg: {
@@ -163,19 +161,18 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 2,
-    borderColor: 'white',
-    marginTop: 5,
-    fontSize:20,
+    borderColor: "white",
+    fontSize: 20,
   },
   btnStyle: {
     color: "white",
     fontSize: 22,
   },
-  gradient:{
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width:'100%',
+  gradient: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
     borderRadius: 10,
-  }
+  },
 });

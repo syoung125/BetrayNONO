@@ -1,10 +1,10 @@
 import React from "react";
+import globalStyle from "../styles/Styles";
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  Button,
   TouchableOpacity,
   Dimensions,
   KeyboardAvoidingView,
@@ -15,12 +15,16 @@ import Logo from "../component/Logo";
 export default class Login extends React.Component {
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
+      <KeyboardAvoidingView
+        style={globalStyle.container}
+        behavior="height"
+        enabled
+      >
         <StatusBar style="auto" />
         <Logo />
         <View style={styles.mainContainer}>
           <View style={styles.titleContainer}>
-            <Text style={styles.mainTitle}>회원가입</Text>
+            <Text style={styles.mainTitle}>로그인</Text>
           </View>
           <View style={styles.formContainer}>
             <TextInput
@@ -31,13 +35,9 @@ export default class Login extends React.Component {
               style={styles.textInput}
               placeholder="비밀번호를 입력하세요"
             ></TextInput>
-            <TextInput
-              style={styles.textInput}
-              placeholder="비밀번호를 한 번 더 입력하세요"
-            ></TextInput>
           </View>
           <View style={styles.socialLoginContainer}>
-            <Text style={styles.slTitle}>SNS 계정으로 회원가입</Text>
+            <Text style={styles.slTitle}>SNS 계정으로 로그인</Text>
             <View style={styles.btnContainer}>
               <TouchableOpacity
                 style={[styles.socialLoginBtn, { backgroundColor: "#1ec800" }]}
@@ -73,13 +73,6 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    maxWidth: 448,
-    width: "100%",
-    backgroundColor: "#59ADFF",
-    margin: "auto",
-  },
   mainContainer: {
     flex: 1,
     backgroundColor: "#f6f6f6",
