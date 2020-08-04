@@ -5,6 +5,7 @@ import GamePage2 from "../screens/GamePage2";
 import GameResult from "../screens/GameResult";
 import SignIn from "../screens/SignIn";
 import SignUp from "../screens/SignUp";
+
 import MyPage from "../screens/MyPage";
 
 const screens = {
@@ -29,11 +30,7 @@ const screens = {
 };
 
 const HomeStack = createStackNavigator(screens, {
-<<<<<<< HEAD
   initialRouteName: "GameStart",
-=======
-  initialRouteName: "GameStart"
->>>>>>> 159e8cbb36b0c5d8279a5c646cbd6fa07dd6272a
 });
 
 export default createAppContainer(HomeStack);
