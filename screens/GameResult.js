@@ -18,7 +18,7 @@ export default function GameResult() {
         <Text style={styles.questionText}>나에게 능력이 생긴다면?</Text>
       </View>
       <View style={styles.optionContainer}>
-        <OptionResult text={"매일 아침, 밤에\n머리가 감겨져 있는 능력"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
+        <OptionResult text={"매일 아침, 밤에\n머리가 감겨져 있는 능력"} percentage={"44"} pNum={"1111"} win={false}></OptionResult>
         <OptionResult text={"식사 후에 항상\n양치질이 되어 있는 능력"} percentage={"56"} pNum={"2222"} win={true}></OptionResult>
       </View>
         
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionContainer: {
-    width: "1",
     height: "10%",
     borderRadius: 7,
     justifyContent: "center",
@@ -86,7 +85,7 @@ const styles_optionResult = StyleSheet.create({
   container:{
     flex: 1,
     height: "35%",
-    borderRadius: 7,
+    borderRadius: 12,
     justifyContent: "space-between",
     alignItems: "center",
     marginHorizontal: 12,
