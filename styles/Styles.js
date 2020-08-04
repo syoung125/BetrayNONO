@@ -30,8 +30,7 @@ export default StyleSheet.create({
         shadowRadius: 48,
         elevation: 16,
       },
-    }
-    ),
+    }),
   },
   adsf: {
     flex: 1,
