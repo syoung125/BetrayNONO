@@ -44,9 +44,9 @@ const MyPage = ({ navigation }) => {
               />
               <Text style={styles.nameText}>Hyunchocopie</Text>
             </View>
-            <View style={styles.settingCol}>
-              <Image source={images.setting} style={styles.settingCol}></Image>
-            </View>
+
+            <Image source={images.setting} style={styles.settingimg}></Image>
+
           </View>
 
           <View style={styles.profileDataColumn}>
@@ -60,23 +60,23 @@ const MyPage = ({ navigation }) => {
         </View>
 
         <View style={styles.menuContainer}>
-          <View style={styles.likeBox}>
-            <Text>aa</Text>
-
+          <View style={styles.menuBox}>
+            <Image source={images.like} style={[styles.menuimg,{tintColor:'red'}]}></Image>
+            <Text style={[styles.boxText,{color:'red'}]}>123</Text>
           </View>
           <View style={styles.historyBox}>
-            <Text>aa</Text>
-
+            <Image source={images.history} style={styles.menuimg}></Image>
+            <Text style={[styles.boxText]}>History</Text>
           </View>
-          <View style={styles.alarmBox}>
-            <Text>aa</Text>
-
+          <View style={styles.menuBox}>
+            <Image source={images.alarm} style={styles.menuimg}></Image>
+            <Text style={[styles.boxText]}>3</Text>
           </View>
 
         </View>
         <View style={styles.gameContainer}>
 
-          <Text>aa</Text>
+          <Text >수정중이니까 신경쓰지마세여</Text>
 
         </View>
         <Button title="Start Page" onPress={pressHandler}></Button>
@@ -103,48 +103,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   profileContainer: {
-    flex: 2,
+    flex: 1.5,
     width: '90%',
     backgroundColor: '#316da8',
-    padding: 16,
+    padding: 20,
     borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 4, height: 2 },
+    shadowOpacity: 0.6,
+    shadowRadius: 6,
 
   },
   profileInfoColumn: {
-
     flexDirection: "row",
     justifyContent: 'center',
     paddingHorizontal: 10,
     marginTop: 10,
   },
   image: {
-    //flex: 1,
     width: 60,
     height: 60,
     borderRadius: 30,
   },
-
   nameText: {
-    fontWeight: "600",
-    fontSize: 25,
+    fontSize: 24,
     color: 'white',
     padding: 20,
   },
-
   profileDataColumn: {
     width: '100%',
     paddingHorizontal: 10,
-    paddingVertical: 15,
+    paddingVertical: 16,
 
   },
-  item: {
-    paddingHorizontal: 32,
-    paddingVertical: 4,
-  },
+
   levelcontainer: {
     backgroundColor: 'white',
     height: 20,
-    marginTop: 5,
+    marginTop: 6,
     borderRadius: 10,
     alignItems: 'center',
     paddingHorizontal: 3,
@@ -152,11 +148,12 @@ const styles = StyleSheet.create({
   },
   levelbar: {
     backgroundColor: '#F06374',
-    height: 15,
+    height: 16,
     width: '100%',
     borderRadius: 10,
   },
   settingContainer: {
+    alignItems: 'flex-end',
     paddingLeft: 60,
   },
   profileCol: {
@@ -165,42 +162,53 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     //margin:10,
   },
-  settingCol: {
-    width: 25,
-    height: 25,
+  settingimg: {
+    width: 26,
+    height: 26,
   },
+  menuimg: {
+    width: 26,
+    height: 26,
+    marginTop: 5,
+  },
+
 
   menuContainer: {
     flex: 1,
     margin: 20,
     borderRadius: 10,
-
     width: '90%',
     backgroundColor: 'white',
-    flexDirection:'row',
-    alignItems:'center',
-    
+    flexDirection: 'row',
+    alignItems: 'center',
+    shadowColor: "#000",
+    shadowOffset: { width: 4, height: 2 },
+    shadowOpacity: 0.6,
+    shadowRadius: 6,
   },
-  likeBox:{
-    alignItems:'center',
-    flex:1,
+  menuBox: {
+    alignItems: 'center',
+    flex: 1,
   },
-  historyBox:{
-    alignItems:'center',
-    flex:1,
-    
-    borderRightWidth:0.5,
-    borderRightColor:'lightgrey',
-    borderLeftWidth:0.5,
-    borderLeftColor:'lightgrey',
+  historyBox: {
+    alignItems: 'center',
+    flex: 1,
+
+    borderRightWidth: 0.5,
+    borderRightColor: 'lightgrey',
+    borderLeftWidth: 0.5,
+    borderLeftColor: 'lightgrey',
   },
-  alarmBox:{
-    alignItems:'center',
-    flex:1,
-    
+  boxText:{
+    color: 'grey', 
+    paddingTop: 5,
+    fontSize:16, 
+    fontFamily:'NanumSquareRoundEB'
   },
   gameContainer: {
     flex: 4,
+    width:'90%',
+    backgroundColor:'red'
   },
 });
 

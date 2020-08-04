@@ -3,7 +3,6 @@ import Logo from "../component/Logo";
 import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import Styles from "../styles/Styles";
 import color from "../assets/colors";
 
 export default function GameResult() {
@@ -105,6 +104,9 @@ const styles_optionResult = StyleSheet.create({
   },
   percentageText: {
     fontSize: 32,
+  },
+  pNumText: {
+    fontSize: 12,
   },
   pNumText: {
     fontSize: 12,
