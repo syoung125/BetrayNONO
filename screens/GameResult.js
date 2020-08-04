@@ -5,11 +5,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Styles from "../styles/Styles";
 
-
 export default function GameResult() {
   return (
     <View style={globalStyle.container}>
-      <Logo/>
+      <Logo />
       <View style={styles.qcountContainer}>
         <Text style={styles.qCountText}>문제 9 / 15</Text>
       </View>
@@ -17,16 +16,27 @@ export default function GameResult() {
         <Text style={styles.questionText}>나에게 능력이 생긴다면?</Text>
       </View>
       <View style={styles.optionContainer}>
+        <OptionResult
+          text={"하이하이"}
+          percentage={"44"}
+          pNum={"1111"}
+          win={true}
+        ></OptionResult>
+        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
         <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
         <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
       </View>
-        
     </View>
   );
 }
 
-function OptionResult({text, percentage, pNum, win=false}) {
+function OptionResult({ text, percentage, pNum, win = false }) {
   return (
+    <View style={styles_optionResult.container}>
+      <Text>{text}</Text>
+      <Text>{percentage}%</Text>
+      <Text>({pNum}명)</Text>
+    </View>
       <View style={styles_optionResult.container}>
           <Text>{text}</Text>
           <View>
@@ -36,8 +46,6 @@ function OptionResult({text, percentage, pNum, win=false}) {
       </View>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   qcountContainer: {
@@ -50,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionContainer: {
-    width: "1",
+    flex: 1,
     height: "10%",
     borderRadius: 7,
     justifyContent: "center",
@@ -71,27 +79,25 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "NanumSquareRoundB",
   },
+  optionContainer: {
+    flex: 1,
+    marginTop: 10,
+  },
+});
+
+const styles_optionResult = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: "15%",
+    borderRadius: 7,
+    justifyContent: "center",
+    alignItems: "flex-start",
+    marginTop: 10,
+  },
   optionContainer:{
     height: "30%",
     marginTop: 10,
     backgroundColor: 'blue',
-    justifyContent: "center"
-  }
-})
-
-
-const styles_optionResult = StyleSheet.create({
-  container:{
-    flex: 1,
-    height: "35%",
-    borderRadius: 7,
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginRight: 12,
-    marginLeft: 12,
-    marginVertical: 5,
-    padding: 24,
-    backgroundColor: "white",
-    flexDirection: "row"
-  }
+    justifyContent: "center",
+  },
 })
