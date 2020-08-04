@@ -3,48 +3,69 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   TextInput,
+  Button,
+  TouchableOpacity,
+  Dimensions,
+  KeyboardAvoidingView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import colors from "../assets/colors";
-import strings from "../assets/string";
 import Logo from "../component/Logo";
-import { KeyboardAvoidingView } from "react-native";
 
-export default class SingUp extends React.Component {
+export default class Login extends React.Component {
   render() {
     return (
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior="position"
-        enabled
-      >
+      <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
         <StatusBar style="auto" />
         <Logo />
         <View style={styles.mainContainer}>
-          <Text style={styles.title}>{strings.SignupScreen.title}</Text>
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="아이디를 입력하세요."
-          />
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="이름을 입력하세요."
-          />
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="비밀번호를 입력하세요."
-          />
-          <TextInput
-            style={styles.textInputStyle}
-            placeholder="비밀번호 확인"
-          />
-          <View style={{ flex: 1 }}>
-            <TouchableOpacity style={styles.btnSignup}>
-              <Text style={styles.btnStyle}>회원가입</Text>
-            </TouchableOpacity>
+          <View style={styles.titleContainer}>
+            <Text style={styles.mainTitle}>회원가입</Text>
           </View>
+          <View style={styles.formContainer}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="아이디를 입력하세요"
+            ></TextInput>
+            <TextInput
+              style={styles.textInput}
+              placeholder="비밀번호를 입력하세요"
+            ></TextInput>
+            <TextInput
+              style={styles.textInput}
+              placeholder="비밀번호를 한 번 더 입력하세요"
+            ></TextInput>
+          </View>
+          <View style={styles.socialLoginContainer}>
+            <Text style={styles.slTitle}>SNS 계정으로 회원가입</Text>
+            <View style={styles.btnContainer}>
+              <TouchableOpacity
+                style={[styles.socialLoginBtn, { backgroundColor: "#1ec800" }]}
+              >
+                <Text style={styles.btnText}>N</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.socialLoginBtn, { backgroundColor: "#3b5998" }]}
+              >
+                <Text style={styles.btnText}>F</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.socialLoginBtn, { backgroundColor: "#ffe812" }]}
+              >
+                <Text
+                  style={[styles.btnText, { color: "#020202", opacity: 0.6 }]}
+                >
+                  K
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.socialLoginBtn, { backgroundColor: "#e74c3c" }]}
+              >
+                <Text style={styles.btnText}>G</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.blankContainer}></View>
         </View>
       </KeyboardAvoidingView>
     );
@@ -54,37 +75,60 @@ export default class SingUp extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    maxWidth: 448,
+    width: "100%",
     backgroundColor: "#59ADFF",
+    margin: "auto",
   },
   mainContainer: {
     flex: 1,
-    alignItems: "center",
+    backgroundColor: "#f6f6f6",
+    marginTop: 16,
+    borderTopRightRadius: 36,
+    borderTopLeftRadius: 36,
+    paddingHorizontal: 48,
   },
-  title: {
-    fontSize: 20,
-    marginTop: 70,
-    marginBottom: 30,
+  mainTitle: {
+    fontSize: 28,
+    fontWeight: "200",
+    fontFamily: "NanumSquareRoundR",
+    opacity: 0.7,
   },
-  textInputStyle: {
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    borderColor: "gray",
-    borderWidth: 1,
-    paddingLeft: 10,
-    marginBottom: 5,
-  },
-  btnSignup: {
-    alignItems: "center",
+  titleContainer: {
+    flex: 2,
+    paddingTop: 24,
     justifyContent: "center",
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    marginTop: 5,
-    backgroundColor: colors.btnLoginKakao,
   },
-  btnStyle: {
-    color: "white",
-    fontSize: 20,
+  inputContainer: { flex: 3 },
+  textInput: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#bdc3c7",
+    paddingBottom: 8,
+    paddingLeft: 4,
+    marginBottom: 24,
+    fontSize: 16,
   },
+  socialLoginContainer: {
+    flex: 3,
+    alignItems: "center",
+    paddingTop: 16,
+  },
+  slTitle: { opacity: 0.5 },
+  btnContainer: {
+    width: "90%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingTop: 16,
+  },
+  socialLoginBtn: {
+    width: 48,
+    height: 48,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#020202",
+    borderRadius: Dimensions.get("window").width / 2,
+    borderRadius: Dimensions.get("window").height / 2,
+  },
+  btnText: { fontSize: 24, fontFamily: "NanumSquareRoundB", color: "#F2F2F2" },
+  blankContainer: { flex: 2 },
 });

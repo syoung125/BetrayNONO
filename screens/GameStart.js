@@ -52,10 +52,14 @@ export default class GameStart extends React.Component {
                   this.props.navigation.navigate("GamePage");
                 }}
               >
-                <LinearGradient colors={['transparent','#dc13f0']} start={[0, 1]} end={[1, 0]} style={styles.gradient}>
+                <LinearGradient
+                  colors={["transparent", "#dc13f0"]}
+                  start={[0, 1]}
+                  end={[1, 0]}
+                  style={styles.gradient}
+                >
                   <Text style={styles.btnStyle}>시작하기</Text>
                 </LinearGradient>
-                
               </TouchableOpacity>
               <View style={styles.btnRowContainer}>
                 <TouchableOpacity
@@ -99,25 +103,24 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     alignItems: "center",
-
   },
   title1: {
     fontFamily: "Capriola-Regular",
     fontSize: 48,
     marginTop: 50,
     fontWeight: "600",
-    color: 'white',
-    textShadowColor: 'grey',
-    textShadowOffset: {width: -1, height: 3},
+    color: "white",
+    textShadowColor: "grey",
+    textShadowOffset: { width: -1, height: 3 },
     textShadowRadius: 7,
   },
   title2: {
     fontFamily: "Capriola-Regular",
     fontSize: 24,
     marginTop: 10,
-    color: 'white',
-    textShadowColor: 'grey',
-    textShadowOffset: {width: -1, height: 3},
+    color: "white",
+    textShadowColor: "grey",
+    textShadowOffset: { width: -1, height: 3 },
     textShadowRadius: 7,
   },
   mainImage: {
@@ -127,8 +130,8 @@ const styles = StyleSheet.create({
     marginBottom: 60,
   },
   btnContainer: {
-    alignItems: 'center',
-    flex: 1
+    alignItems: "center",
+    flex: 1,
   },
   btnStartBg: {
     alignItems: "center",
@@ -137,14 +140,14 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: "white",
     margin: 10,
   },
   btnRowContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: 'center',
-    marginTop:5,
+    alignItems: "center",
+    marginTop: 5,
   },
   btnLoginBg: {
     alignItems: "center",
@@ -153,7 +156,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 2,
-    borderColor: 'white',
+    borderColor: "white",
     marginRight: 20,
   },
   btnSignUpBg: {
@@ -163,19 +166,18 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 2,
-    borderColor: 'white',
-    marginTop: 5,
-    fontSize:20,
+    borderColor: "white",
+    fontSize: 20,
   },
   btnStyle: {
     color: "white",
     fontSize: 22,
   },
-  gradient:{
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width:'100%',
+  gradient: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
     borderRadius: 10,
-  }
+  },
 });
