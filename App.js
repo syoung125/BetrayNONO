@@ -3,6 +3,7 @@ import GameStart from "./screens/GameStart";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./navigation/HomeStack";
+import GameResult from "./screens/GameResult";
 
 const getFonts = async () =>
   await Font.loadAsync({
