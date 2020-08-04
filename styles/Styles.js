@@ -15,22 +15,27 @@ export default StyleSheet.create({
     borderTopRightRadius: 36,
     borderTopLeftRadius: 36,
     paddingHorizontal: 48,
-    ...Platform.select({
-      ios: {
-        shadowColor: "#000",
-        shadowOffset: { width: 4, height: 2 },
-        shadowOpacity: 0.6,
-        shadowRadius: 6,
-        elevation: 32,
-      },
-      android: {
-        shadowColor: "pink",
-        shadowOffset: { width: 8, height: -16 },
-        shadowOpacity: 0.8,
-        shadowRadius: 48,
-        elevation: 16,
-      },
-    }),
+    shadowColor: "#000",
+    shadowOffset: { width: 4, height: 2 },
+    shadowOpacity: 0.6,
+    shadowRadius: 6,
+    elevation: 32,
+    // ...Platform.select({
+    //   ios: {
+    //     shadowColor: "#000",
+    //     shadowOffset: { width: 4, height: 2 },
+    //     shadowOpacity: 0.6,
+    //     shadowRadius: 6,
+    //     elevation: 32,
+    //   },
+    //   android: {
+    //     shadowColor: "pink",
+    //     shadowOffset: { width: 8, height: -16 },
+    //     shadowOpacity: 0.8,
+    //     shadowRadius: 48,
+    //     elevation: 16,
+    //   },
+    // }),
   },
   adsf: {
     flex: 1,
