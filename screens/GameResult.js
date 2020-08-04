@@ -2,15 +2,12 @@ import React from "react";
 import Logo from "../component/Logo";
 import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import Styles from "../styles/Styles";
-import color from "../assets/colors"
-
+import color from "../assets/colors";
 
 export default function GameResult() {
   return (
     <View style={globalStyle.container}>
-      <Logo/>
+      <Logo />
       <View style={styles.qcountContainer}>
         <Text style={styles.qCountText}>문제 9 / 15</Text>
       </View>
@@ -18,15 +15,24 @@ export default function GameResult() {
         <Text style={styles.questionText}>나에게 능력이 생긴다면?</Text>
       </View>
       <View style={styles.optionContainer}>
-        <OptionResult text={"매일 아침, 밤에\n머리가 감겨져 있는 능력"} percentage={"44"} pNum={"1111"} win={false}></OptionResult>
-        <OptionResult text={"식사 후에 항상\n양치질이 되어 있는 능력"} percentage={"56"} pNum={"2222"} win={true}></OptionResult>
+        <OptionResult
+          text={"매일 아침, 밤에\n머리가 감겨져 있는 능력"}
+          percentage={"44"}
+          pNum={"1111"}
+          win={false}
+        ></OptionResult>
+        <OptionResult
+          text={"식사 후에 항상\n양치질이 되어 있는 능력"}
+          percentage={"56"}
+          pNum={"2222"}
+          win={true}
+        ></OptionResult>
       </View>
-        
     </View>
   );
 }
 
-function OptionResult({text, percentage, pNum, win=false}) {
+function OptionResult({ text, percentage, pNum, win = false }) {
   return (
       <View style={[styles_optionResult.container, {backgroundColor: win? color.lightRed: 'white'}]}>
           <View style={{flex: 3}}>
@@ -45,8 +51,6 @@ function OptionResult({text, percentage, pNum, win=false}) {
       </View>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   qcountContainer: {
@@ -79,16 +83,15 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "NanumSquareRoundB",
   },
-  optionContainer:{
+  optionContainer: {
     height: "30%",
     marginTop: 10,
-    justifyContent: "center"
-  }
-})
-
+    justifyContent: "center",
+  },
+});
 
 const styles_optionResult = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
     height: "35%",
     borderRadius: 12,
@@ -101,13 +104,10 @@ const styles_optionResult = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
   },
-  optionText:{
+  optionText: {
     fontSize: 18,
   },
   percentageText:{
     fontSize: 32
   },
-  pNumText:{
-    fontSize: 12
-  }
-})
+});
