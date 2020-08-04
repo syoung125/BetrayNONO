@@ -1,20 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState, useRef } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Animated,
-  Button,
-  Alert,
-  FlatList,
-} from "react-native";
-import Constants from "expo-constants";
+import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
 import Logo from "../component/Logo";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { LinearGradient } from "expo-linear-gradient";
 import images from "../assets/images";
+import globalStyle from "../styles/Styles";
 
 const MyPage = ({ navigation }) => {
   const goToFollow = () => {
@@ -28,14 +17,12 @@ const MyPage = ({ navigation }) => {
     navigation.navigate("GameStart");
   };
   return (
-    <View style={styles.container}>
+    <View style={globalStyle.container}>
       {/* <LinearGradient colors={["#a1c4fd", "#a1c4fd", "#c2e9fb"]} style={{ flex: 1 }}> */}
       <StatusBar style="auto" />
       <Logo />
       <View style={styles.mainContainer}>
-
         <View style={styles.profileContainer}>
-
           <View style={styles.profileInfoColumn}>
             <View style={styles.profileCol}>
               <Image
@@ -46,23 +33,23 @@ const MyPage = ({ navigation }) => {
             </View>
 
             <Image source={images.setting} style={styles.settingimg}></Image>
-
           </View>
 
           <View style={styles.profileDataColumn}>
-            <Text style={{ color: 'white', fontSize: 18, }}> Lv. 25 </Text>
+            <Text style={{ color: "white", fontSize: 18 }}> Lv. 25 </Text>
             <View style={styles.levelcontainer}>
-              <View style={styles.levelbar}>
-
-              </View>
+              <View style={styles.levelbar}></View>
             </View>
           </View>
         </View>
 
         <View style={styles.menuContainer}>
           <View style={styles.menuBox}>
-            <Image source={images.like} style={[styles.menuimg,{tintColor:'red'}]}></Image>
-            <Text style={[styles.boxText,{color:'red'}]}>123</Text>
+            <Image
+              source={images.like}
+              style={[styles.menuimg, { tintColor: "red" }]}
+            ></Image>
+            <Text style={[styles.boxText, { color: "red" }]}>123</Text>
           </View>
           <View style={styles.historyBox}>
             <Image source={images.history} style={styles.menuimg}></Image>
@@ -72,15 +59,11 @@ const MyPage = ({ navigation }) => {
             <Image source={images.alarm} style={styles.menuimg}></Image>
             <Text style={[styles.boxText]}>3</Text>
           </View>
-
         </View>
         <View style={styles.gameContainer}>
-
-          <Text >수정중이니까 신경쓰지마세여</Text>
-
+          <Text>수정중이니까 신경쓰지마세여</Text>
         </View>
         <Button title="Start Page" onPress={pressHandler}></Button>
-
       </View>
       {/* </LinearGradient> */}
     </View>
@@ -95,28 +78,26 @@ const styles = StyleSheet.create({
     //paddingTop: Constants.statusBarHeight,
     padding: 0,
     backgroundColor: "#59ADFF",
-    margin: 'auto',
-
+    margin: "auto",
   },
   mainContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   profileContainer: {
     flex: 2,
-    width: '90%',
-    backgroundColor: '#316da8',
+    width: "90%",
+    backgroundColor: "#316da8",
     padding: 20,
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 2 },
     shadowOpacity: 0.6,
     shadowRadius: 6,
-    
   },
   profileInfoColumn: {
     flexDirection: "row",
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingHorizontal: 10,
     marginTop: 10,
   },
@@ -127,39 +108,38 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 24,
-    color: 'white',
+    color: "white",
     padding: 20,
   },
   profileDataColumn: {
-    width: '100%',
+    width: "100%",
     paddingHorizontal: 10,
     paddingVertical: 16,
-    
   },
 
   levelcontainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     height: 20,
     marginTop: 6,
     borderRadius: 10,
-    alignItems: 'center',
+    alignItems: "center",
     paddingHorizontal: 3,
     justifyContent: "center",
   },
   levelbar: {
-    backgroundColor: '#F06374',
+    backgroundColor: "#F06374",
     height: 16,
-    width: '100%',
+    width: "100%",
     borderRadius: 10,
   },
   settingContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     paddingLeft: 60,
   },
   profileCol: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: 'center',
+    justifyContent: "center",
     //margin:10,
   },
   settingimg: {
@@ -172,43 +152,41 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 
-
   menuContainer: {
     flex: 1,
     margin: 20,
     borderRadius: 10,
-    width: '90%',
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: "90%",
+    backgroundColor: "white",
+    flexDirection: "row",
+    alignItems: "center",
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 2 },
     shadowOpacity: 0.6,
     shadowRadius: 6,
   },
   menuBox: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
   },
   historyBox: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
 
     borderRightWidth: 0.5,
-    borderRightColor: 'lightgrey',
+    borderRightColor: "lightgrey",
     borderLeftWidth: 0.5,
-    borderLeftColor: 'lightgrey',
+    borderLeftColor: "lightgrey",
   },
-  boxText:{
-    color: 'grey', 
+  boxText: {
+    color: "grey",
     paddingTop: 5,
-    fontSize:16, 
-    fontFamily:'NanumSquareRoundEB'
+    fontSize: 16,
+    fontFamily: "NanumSquareRoundEB",
   },
   gameContainer: {
     flex: 4,
-    width:'90%',
-    backgroundColor:'red'
+    width: "90%",
+    backgroundColor: "red",
   },
 });
-
