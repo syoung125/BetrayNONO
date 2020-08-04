@@ -104,7 +104,7 @@ const styles_optionResult = StyleSheet.create({
     fontSize: 18,
   },
   percentageText: {
-    fontSize: 36,
+    fontSize: 32,
   },
   pNumText: {
     fontSize: 12,
