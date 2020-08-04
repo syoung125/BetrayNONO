@@ -17,7 +17,16 @@ export default class Login extends React.Component {
       <View style={styles.container}>
         <StatusBar style="auto" />
         <Logo />
-        <View style={styles.mainContainer}></View>
+        <View style={styles.mainContainer}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.mainTitle}>회원가입</Text>
+          </View>
+          <View style={styles.formContainer}>
+            <Text style={styles.mainTitle}></Text>
+          </View>
+          <View style={styles.socialLoginContainer}></View>
+          <View style={styles.blankContainer}></View>
+        </View>
       </View>
     );
   }
@@ -34,64 +43,23 @@ const styles = StyleSheet.create({
 
   mainContainer: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "#f2f2f2",
     marginTop: 16,
     borderTopRightRadius: 36,
     borderTopLeftRadius: 36,
+    paddingHorizontal: 32,
   },
-  title: {
-    fontSize: 20,
-    marginTop: 70,
-    marginBottom: 30,
+  mainTitle: {
+    fontSize: 32,
+    fontWeight: "200",
+    fontFamily: "NanumSquareRoundR",
   },
-  textInputStyle: {
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    borderColor: "gray",
-    borderWidth: 1,
-    paddingLeft: 10,
-    marginBottom: 5,
-  },
-  btnLoginBg: {
-    alignItems: "center",
+  titleContainer: {
+    flex: 2,
+    paddingTop: 24,
     justifyContent: "center",
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    marginTop: 5,
-    backgroundColor: colors.btnLoginKakao,
   },
-  btnLoginKakao: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    marginTop: 5,
-    backgroundColor: "#FFEB33",
-  },
-  btnLoginFacebook: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    marginTop: 5,
-    backgroundColor: "#4267B2",
-  },
-  btnSignup: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: 230,
-    height: 50,
-    borderRadius: 10,
-    marginTop: 5,
-    backgroundColor: "#764ABC",
-  },
-  btnStyle: {
-    color: "white",
-    fontSize: 20,
-  },
+  formContainer: { flex: 3 },
+  socialLoginContainer: { flex: 3 },
+  blankContainer: { flex: 2 },
 });
