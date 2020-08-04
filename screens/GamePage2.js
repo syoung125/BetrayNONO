@@ -41,6 +41,7 @@ const GamePage2 = ({ navigation }) => {
     Animated.timing(animation.current, {
       toValue: progress,
       duration: 100,
+      useNativeDriver: false,
     }).start();
   }, [progress]);
 
@@ -51,7 +52,6 @@ const GamePage2 = ({ navigation }) => {
   });
 
   const pressHandler = () => {
-    //navigation.navigate('ReviewDetails');
     navigation.push("GameResult");
   };
 
@@ -64,11 +64,16 @@ const GamePage2 = ({ navigation }) => {
         <View style={styles.qcountContainer}>
           <Text style={styles.qCountText}>문제 9 / 15</Text>
         </View>
-        <Question style={styles.questionContainer} title={"나에게 능력이 생긴다면?"} />
+        <Question
+          style={styles.questionContainer}
+          title={"나에게 능력이 생긴다면?"}
+        />
         <View style={styles.timerContainer}>
           <View style={styles.timerColumnFirst}>
             <View style={styles.progressBar}>
-              <Animated.View style={{ backgroundColor: "#FDDE7B", height: "100%", width }} />
+              <Animated.View
+                style={{ backgroundColor: "#FDDE7B", height: "100%", width }}
+              />
             </View>
           </View>
           <View style={styles.timerColumnSecond}>
@@ -86,9 +91,7 @@ const GamePage2 = ({ navigation }) => {
             <Text>식사 후에 항상{"\n"}양치질이 되어 있는 능력</Text>
           </View>
         </View>
-        <View style={styles.bottomContainer}>
-          
-        </View>
+        <View style={styles.bottomContainer}></View>
       </View>
       <Button title="to review GameStart screen" onPress={pressHandler} />
     </View>

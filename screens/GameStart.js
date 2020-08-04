@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   title1: {
     fontFamily: "Capriola-Regular",
     fontSize: 48,
-    marginTop: 50,
+    marginTop: 30,
     fontWeight: "600",
     color: "white",
     textShadowColor: "grey",

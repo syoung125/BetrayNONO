@@ -4,6 +4,7 @@ import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Styles from "../styles/Styles";
+import { preventAutoHide } from "expo/build/launch/SplashScreen";
 
 export default function GameResult() {
   return (
@@ -22,8 +23,12 @@ export default function GameResult() {
           pNum={"1111"}
           win={true}
         ></OptionResult>
-        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
-        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
+        <OptionResult
+          text={"하이하이"}
+          percentage={"44"}
+          pNum={"1111"}
+          win={true}
+        ></OptionResult>
       </View>
     </View>
   );
@@ -33,16 +38,11 @@ function OptionResult({ text, percentage, pNum, win = false }) {
   return (
     <View style={styles_optionResult.container}>
       <Text>{text}</Text>
-      <Text>{percentage}%</Text>
-      <Text>({pNum}명)</Text>
-    </View>
-      <View style={styles_optionResult.container}>
-          <Text>{text}</Text>
-          <View>
-            <Text>{percentage}%</Text>
-            <Text>({pNum}명)</Text>
-          </View>
+      <View>
+        <Text>{percentage}%</Text>
+        <Text>({pNum}명)</Text>
       </View>
+    </View>
   );
 }
 
@@ -57,14 +57,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   questionContainer: {
-    flex: 1,
     height: "10%",
-    borderRadius: 7,
+    borderRadius: 8,
     justifyContent: "center",
     alignItems: "flex-start",
-    marginTop: 10,
-    marginRight: 12,
-    marginLeft: 12,
+    marginTop: 8,
+    marginHorizontal: 12,
     padding: 24,
     backgroundColor: "#40688F",
   },
@@ -79,24 +77,25 @@ const styles = StyleSheet.create({
     fontFamily: "NanumSquareRoundB",
   },
   optionContainer: {
-    flex: 1,
+    height: "30%",
     marginTop: 10,
+    backgroundColor: "blue",
+    justifyContent: "center",
   },
 });
 
 const styles_optionResult = StyleSheet.create({
   container: {
     flex: 1,
-    height: "15%",
+    height: "35%",
     borderRadius: 7,
-    justifyContent: "center",
-    alignItems: "flex-start",
-    marginTop: 10,
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginRight: 12,
+    marginLeft: 12,
+    marginVertical: 5,
+    padding: 24,
+    backgroundColor: "white",
+    flexDirection: "row",
   },
-  optionContainer:{
-    height: "30%",
-    marginTop: 10,
-    backgroundColor: 'blue',
-    justifyContent: "center",
-  },
-})
+});

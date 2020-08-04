@@ -4,10 +4,6 @@ import { AppLoading } from "expo";
 import GameStart from "./screens/GameStart";
 import Navigator from "./navigation/HomeStack";
 import GlobalFont from "react-native-global-font";
-<<<<<<< HEAD
-=======
-import GameResult from "./screens/GameResult";
->>>>>>> b8e530d0c9c60a6e5d79b8e82a99eda36e2f629d
 
 const getFonts = async () =>
   await Font.loadAsync({
