@@ -54,6 +54,7 @@ const MyPage = ({ navigation }) => {
             </View>
             <View style={styles.profileDataColumn}></View>
           </View>
+
           <View style={styles.profileMenuContainer}>
             <FlatList
               horizontal={true}
@@ -66,8 +67,9 @@ const MyPage = ({ navigation }) => {
                 <Text style={styles.item}>{item.key}</Text>
               )}
             />
-            <Button title="Start Page" onPress={pressHandler}></Button>
+            
           </View>
+          <Button title="Start Page" onPress={pressHandler}></Button>
         </View>
       </LinearGradient>
     </View>
