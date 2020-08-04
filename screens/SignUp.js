@@ -23,7 +23,7 @@ export default class Login extends React.Component {
       >
         <StatusBar style="auto" />
         <Logo />
-        <View style={styles.mainContainer}>
+        <View style={globalStyle.bgWhiteContainer}>
           <View style={styles.titleContainer}>
             <Text style={styles.mainTitle}>회원가입</Text>
           </View>

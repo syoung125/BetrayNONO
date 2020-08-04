@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import globalStyle from "../styles/Styles";
 import React, { useEffect, useState, useRef } from "react";
 import {
   StyleSheet,
@@ -15,6 +14,7 @@ import Constants from "expo-constants";
 import Logo from "../component/Logo";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { LinearGradient } from "expo-linear-gradient";
+import images from "../assets/images";
 
 const MyPage = ({ navigation }) => {
   const goToFollow = () => {
@@ -28,50 +28,61 @@ const MyPage = ({ navigation }) => {
     navigation.navigate("GameStart");
   };
   return (
-    <View style={globalStyle.container}>
-      <LinearGradient
-        colors={["#a1c4fd", "#a1c4fd", "#c2e9fb"]}
-        style={{ flex: 1 }}
-      >
-        <StatusBar style="auto" />
-        <Logo />
-        <View style={styles.mainContainer}>
-          <View style={styles.profileContainer}>
-            <View style={styles.profileInfoColumn}>
+    <View style={styles.container}>
+      {/* <LinearGradient colors={["#a1c4fd", "#a1c4fd", "#c2e9fb"]} style={{ flex: 1 }}> */}
+      <StatusBar style="auto" />
+      <Logo />
+      <View style={styles.mainContainer}>
+
+        <View style={styles.profileContainer}>
+
+          <View style={styles.profileInfoColumn}>
+            <View style={styles.profileCol}>
               <Image
                 source={require("../assets/images/jennie.jpg")}
                 style={styles.image}
               />
-              <View style={styles.profileInfoTextColumn}>
-                <Text style={styles.infoText}>Jennie</Text>
-                <TouchableOpacity
-                  style={styles.followBtnBg}
-                  onPress={goToFollow}
-                >
-                  <Text style={styles.followBtnText}>Follow</Text>
-                </TouchableOpacity>
-                <Text style={styles.infoDescription}>BlackPink - Jennie</Text>
-              </View>
+              <Text style={styles.nameText}>Hyunchocopie</Text>
             </View>
-            <View style={styles.profileDataColumn}></View>
+            <View style={styles.settingCol}>
+              <Image source={images.setting} style={styles.settingCol}></Image>
+            </View>
           </View>
 
-          <View style={styles.profileMenuContainer}>
-            <FlatList
-              horizontal={true}
-              data={[
-                { key: "My Quizs" },
-                { key: "My Likes" },
-                { key: "Following" },
-              ]}
-              renderItem={({ item }) => (
-                <Text style={styles.item}>{item.key}</Text>
-              )}
-            />
+          <View style={styles.profileDataColumn}>
+            <Text style={{ color: 'white', fontSize: 18, }}> Lv. 25 </Text>
+            <View style={styles.levelcontainer}>
+              <View style={styles.levelbar}>
+
+              </View>
+            </View>
           </View>
-          <Button title="Start Page" onPress={pressHandler}></Button>
         </View>
-      </LinearGradient>
+
+        <View style={styles.menuContainer}>
+          <View style={styles.likeBox}>
+            <Text>aa</Text>
+
+          </View>
+          <View style={styles.historyBox}>
+            <Text>aa</Text>
+
+          </View>
+          <View style={styles.alarmBox}>
+            <Text>aa</Text>
+
+          </View>
+
+        </View>
+        <View style={styles.gameContainer}>
+
+          <Text>aa</Text>
+
+        </View>
+        <Button title="Start Page" onPress={pressHandler}></Button>
+
+      </View>
+      {/* </LinearGradient> */}
     </View>
   );
 };
@@ -79,55 +90,117 @@ const MyPage = ({ navigation }) => {
 export default MyPage;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //paddingTop: Constants.statusBarHeight,
+    padding: 0,
+    backgroundColor: "#59ADFF",
+    margin: 'auto',
+
+  },
   mainContainer: {
     flex: 1,
+    alignItems: 'center',
   },
   profileContainer: {
-    flex: 1,
+    flex: 2,
+    width: '90%',
+    backgroundColor: '#316da8',
+    padding: 16,
+    borderRadius: 10,
+
   },
   profileInfoColumn: {
-    flex: 1,
+
     flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    flexWrap: "wrap",
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    marginTop: 10,
   },
   image: {
-    flex: 1,
-    maxWidth: 60,
-    maxHeight: 60,
-    width: "100%",
-    height: "100%",
-    borderRadius: 24,
+    //flex: 1,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
   },
-  profileInfoTextColumn: {
-    width: "30%",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    marginLeft: 8,
-  },
-  infoText: {
+
+  nameText: {
     fontWeight: "600",
-    fontSize: 18,
+    fontSize: 25,
+    color: 'white',
+    padding: 20,
   },
-  followBtnBg: {
-    marginLeft: 8,
-    backgroundColor: "skyblue",
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+
+  profileDataColumn: {
+    width: '100%',
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+
   },
-  followBtnText: { color: "#f6f6f6" },
-  infoDescription: {
-    fontWeight: "400",
-    fontSize: 14,
-    marginTop: 4,
-  },
-  profileMenuContainer: {
-    flex: 9,
-  },
-  profileMenu: {},
   item: {
     paddingHorizontal: 32,
     paddingVertical: 4,
   },
+  levelcontainer: {
+    backgroundColor: 'white',
+    height: 20,
+    marginTop: 5,
+    borderRadius: 10,
+    alignItems: 'center',
+    paddingHorizontal: 3,
+    justifyContent: "center",
+  },
+  levelbar: {
+    backgroundColor: '#F06374',
+    height: 15,
+    width: '100%',
+    borderRadius: 10,
+  },
+  settingContainer: {
+    paddingLeft: 60,
+  },
+  profileCol: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: 'center',
+    //margin:10,
+  },
+  settingCol: {
+    width: 25,
+    height: 25,
+  },
+
+  menuContainer: {
+    flex: 1,
+    margin: 20,
+    borderRadius: 10,
+
+    width: '90%',
+    backgroundColor: 'white',
+    flexDirection:'row',
+    alignItems:'center',
+    
+  },
+  likeBox:{
+    alignItems:'center',
+    flex:1,
+  },
+  historyBox:{
+    alignItems:'center',
+    flex:1,
+    
+    borderRightWidth:0.5,
+    borderRightColor:'lightgrey',
+    borderLeftWidth:0.5,
+    borderLeftColor:'lightgrey',
+  },
+  alarmBox:{
+    alignItems:'center',
+    flex:1,
+    
+  },
+  gameContainer: {
+    flex: 4,
+  },
 });
+

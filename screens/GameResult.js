@@ -1,82 +1,91 @@
 import React from "react";
+import Logo from "../component/Logo";
 import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import StatisticsBox from "../component/StatisticsBox";
+import Styles from "../styles/Styles";
+
 
 export default function GameResult() {
   return (
     <View style={globalStyle.container}>
-      <StatusBar style="auto" />
-      <View style={styles.resultContainer}>
-        <View style={styles.statisticsContainer}>
-          <StatisticsBox title={"이거이거이거"} percentage={"30"} />
-          <Text style={styles.vsText}>VS</Text>
-          <StatisticsBox title={"저거저거저거"} percentage={"70"} />
-        </View>
-        <View style={styles.statisticsContainerBottom}>
-          <Text>좋아요</Text>
-          <Text>내 통계</Text>
-          <Text>공유하기</Text>
-        </View>
-        <View style={styles.commentsContainer}>
-          <Text>Best</Text>
-          {/* <Comment
-            nickname={"user1"}
-            text={"당연히 저거저거저거지~"}
-            date={"10분 전"}
-          />
-          <Comment nickname={"user2"} text={"노노~"} date={"15분 전"} />
-          <Comment nickname={"user3"} text={"야야야"} date={"1시간 전"} /> */}
-          <Text>댓글 더보기</Text>
-        </View>
-        <View style={styles.nextBtn}>
-          <Text style={styles.nextText}>NEXT</Text>
-        </View>
+      <Logo/>
+      <View style={styles.qcountContainer}>
+        <Text style={styles.qCountText}>문제 9 / 15</Text>
       </View>
+      <View style={styles.questionContainer}>
+        <Text style={styles.questionText}>나에게 능력이 생긴다면?</Text>
+      </View>
+      <View style={styles.optionContainer}>
+        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
+      </View>
+        
     </View>
   );
 }
 
+function OptionResult({text, percentage, pNum, win=false}) {
+  return (
+      <View style={styles_optionResult.container}>
+          <Text>{text}</Text>
+          <Text>{percentage}%</Text>
+          <Text>({pNum}명)</Text>
+      </View>
+  );
+}
+
+
+
 const styles = StyleSheet.create({
-  resultContainer: {
-    flex: 9,
-  },
-  statisticsContainer: {
-    flex: 2,
-    backgroundColor: "#ECF0F1",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+  qcountContainer: {
+    width: "25%",
+    height: "5%",
+    marginLeft: 12,
+    backgroundColor: "#FF6A71",
+    borderRadius: 10,
     justifyContent: "center",
-  },
-  statisticsContainerBottom: {
-    flex: 1,
-    backgroundColor: "#ECF0F1",
-    display: "flex",
-    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 40,
   },
-  vsText: {
-    marginHorizontal: 10,
+  questionContainer: {
+    width: "1",
+    height: "10%",
+    borderRadius: 7,
+    justifyContent: "center",
+    alignItems: "left",
+    marginTop: 10,
+    marginRight: 12,
+    marginLeft: 12,
+    padding: 24,
+    backgroundColor: "#40688F",
+  },
+  qCountText: {
+    color: "white",
+    fontFamily: "NanumSquareRoundB",
+  },
+  questionText: {
     fontSize: 20,
     fontWeight: "400",
-  },
-  commentsContainer: {
-    flex: 3,
-    backgroundColor: "white",
-  },
-  nextBtn: {
-    flex: 1,
-    backgroundColor: "gray",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  nextText: {
     color: "white",
-    fontSize: 30,
-    fontWeight: "400",
+    fontFamily: "NanumSquareRoundB",
   },
-});
+  optionContainer:{
+    flex: 1,
+    marginTop: 10
+  }
+})
+
+
+const styles_optionResult = StyleSheet.create({
+  container:{
+    width: "1",
+    height: "15%",
+    borderRadius: 7,
+    justifyContent: "center",
+    alignItems: "left",
+    marginTop: 10,
+    marginRight: 12,
+    marginLeft: 12,
+    padding: 24,
+    backgroundColor: "#40688F",
+  }
+})
