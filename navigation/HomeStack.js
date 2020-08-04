@@ -29,7 +29,7 @@ const screens = {
 };
 
 const HomeStack = createStackNavigator(screens, {
-  initialRouteName: "GamePage",
+  initialRouteName: "GamePage"
 });
 
 export default createAppContainer(HomeStack);
