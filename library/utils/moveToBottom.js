@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 50
+    marginBottom: 80
   }
 })
 
