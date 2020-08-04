@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   profileContainer: {
-    flex: 1.5,
+    flex: 2,
     width: '90%',
     backgroundColor: '#316da8',
     padding: 20,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 4, height: 2 },
     shadowOpacity: 0.6,
     shadowRadius: 6,
-
+    
   },
   profileInfoColumn: {
     flexDirection: "row",
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 10,
     paddingVertical: 16,
-
+    
   },
 
   levelcontainer: {
