@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Button,HashRouter,Route } from 'react-native';
-import GameStart from './screens/GameStart';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
+import React, { useState } from "react";
+import GameStart from "./screens/GameStart";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+import Navigator from "./navigation/HomeStack";
 
-export default class App extends React.Component{
-  constructor(props) {
-    super(props)
+const getFonts = () =>
+  Font.loadAsync({
+    "Capriola-Regular": require("./assets/fonts/Capriola-Regular.ttf"),
+  });
 
-  }
-
-  render() {
+export default function App() {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  // constructor(props) {
+  //   super(props);
+  // }
+  if (fontsLoaded) {
     return (
-      <GameStart />
+      <Navigator>
+        <GameStart />
+      </Navigator>
+    );
+  } else {
+    return (
+      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
     );
   }
-
 }
