@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import GameStart from "./screens/GameStart";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import GameStart from "./screens/GameStart";
 import Navigator from "./navigation/HomeStack";
 import GlobalFont from "react-native-global-font";
 import GameResult from "./screens/GameResult";
