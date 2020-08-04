@@ -2,6 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState, useRef } from "react";
 import { StyleSheet, Text, View, Button, Animated } from "react-native";
 import Logo from "../component/Logo";
+import Question from "../component/question";
+import { render } from "react-dom";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -61,8 +63,16 @@ const GamePage2 = ({ navigation }) => {
         <View style={styles.qcountContainer}>
           <Text style={styles.qCountText}>문제 9 / 15</Text>
         </View>
-        <View style={styles.questionContainer}>
-          <Text style={styles.qCountText}>나에게 능력이 생긴다면?</Text>
+        <Question style={styles.questionContainer} title={"나에게 능력이 생긴다면?"} />
+        <View style={styles.timerContainer}>
+          <View style={styles.timerColumnFirst}>
+            <View style={styles.progressBar}>
+              <Animated.View style={{ backgroundColor: "#FDDE7B", height: "100%", width }} />
+            </View>
+          </View>
+          <View style={styles.timerColumnSecond}>
+            <Text style={styles.timerText}>{`${progress}초`}</Text>
+          </View>
         </View>
         <View style={styles.choiceContainer_Left}>
           <Text>매일 아침, 밤에{"\n"}머리가 감겨져 있는 능력</Text>
@@ -76,16 +86,7 @@ const GamePage2 = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <View style={styles.timerContainer}>
-            <View style={styles.timerColumnFirst}>
-              <View style={styles.progressBar}>
-                <Animated.View style={{ backgroundColor: "#8BED4F", width }} />
-              </View>
-            </View>
-            <View style={styles.timerColumnSecond}>
-              <Text style={styles.timerText}>{`${progress}초`}</Text>
-            </View>
-          </View>
+          
         </View>
       </View>
       <Button title="to review GameStart screen" onPress={pressHandler} />
@@ -132,6 +133,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center", 
     paddingTop: 10,
+    marginTop: 15,
+    marginBottom: 30,
   },
   alignContainer: {
     height: "29%",
@@ -204,10 +207,9 @@ const styles = StyleSheet.create({
     height: 18,
     width: "80%",
     backgroundColor: "#f6f6f6",
-    borderColor: "#000",
+    borderColor: "#F6FAFE",
     borderWidth: 3,
     borderRadius: 5,
-    paddingTop: 10,
   },
   progressBarAnimation: {
     backgroundColor: "#8BED4F",
@@ -221,6 +223,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: "NanumSquareRoundB"
   },
-
-
 });
