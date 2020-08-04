@@ -1,7 +1,7 @@
 const strings = {
     logo: "Banana",
     gamestart: {
-        title1: "밸런스 게임",
+        title1: "밸 런 스  게 임",
         title2: "나의 성향은 무엇일까?",
         img: "aaa",
         button: {

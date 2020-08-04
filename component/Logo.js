@@ -6,8 +6,8 @@ import images from "../assets/images";
 export default function Logo() {
   return (
     <View style={styles.logoContainer}>
-      <Text style={styles.logoText}>{strings.logo}</Text>
       <Image source={images.logo} style={styles.tinyLogo}></Image>
+      <Text style={styles.logoText}>{strings.logo}</Text>
     </View>
   );
 }
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     marginVertical: 8,
     paddingBottom: 8,
+    marginRight:10,
   },
   logoText: {
     fontSize: 24,

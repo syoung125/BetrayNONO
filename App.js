@@ -20,6 +20,8 @@ export default function App() {
   // constructor(props) {
   //   super(props);
   // }
+  // gang
+  // chocopie
   if (fontsLoaded) {
     return (
       <Navigator>

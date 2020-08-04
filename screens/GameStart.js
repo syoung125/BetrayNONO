@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 import colors from "../assets/colors";
 import images from "../assets/images";
@@ -38,9 +39,11 @@ export default class GameStart extends React.Component {
         <StatusBar style="auto" />
         <Logo />
         <View style={styles.mainContainer}>
-          <Text style={styles.title1}>{strings.gamestart.title1}</Text>
-          <Text style={styles.title2}>{strings.gamestart.title2}</Text>
-          <Image source={images.logo} style={styles.mainImage}></Image>
+          <View style={styles.logoContainer}>
+            <Text style={styles.title1}>{strings.gamestart.title1}</Text>
+            <Text style={styles.title2}>{strings.gamestart.title2}</Text>
+          </View>
+          <Image source={images.monkey} style={styles.mainImage}></Image>
           {moveToBottom(
             <View style={styles.btnContainer}>
               <TouchableOpacity
@@ -49,7 +52,10 @@ export default class GameStart extends React.Component {
                   this.props.navigation.navigate("GamePage");
                 }}
               >
-                <Text style={styles.btnStyle}>시작하기</Text>
+                <LinearGradient colors={['transparent','#dc13f0']} start={[0, 1]} end={[1, 0]} style={styles.gradient}>
+                  <Text style={styles.btnStyle}>시작하기</Text>
+                </LinearGradient>
+                
               </TouchableOpacity>
               <View style={styles.btnRowContainer}>
                 <TouchableOpacity
@@ -90,56 +96,86 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
+  logoContainer: {
+    flex: 1,
+    alignItems: "center",
+
+  },
   title1: {
     fontFamily: "Capriola-Regular",
     fontSize: 48,
     marginTop: 50,
     fontWeight: "600",
+    color: 'white',
+    textShadowColor: 'grey',
+    textShadowOffset: {width: -1, height: 3},
+    textShadowRadius: 7,
   },
   title2: {
     fontFamily: "Capriola-Regular",
-    fontSize: 18,
+    fontSize: 24,
     marginTop: 10,
+    color: 'white',
+    textShadowColor: 'grey',
+    textShadowOffset: {width: -1, height: 3},
+    textShadowRadius: 7,
   },
   mainImage: {
-    width: 120,
-    height: 120,
-    marginTop: 70,
-    marginBottom: 40,
+    width: 240,
+    height: 240,
+    marginTop: 20,
+    marginBottom: 60,
+  },
+  btnContainer: {
+    alignItems: 'center',
+    flex: 1
   },
   btnStartBg: {
     alignItems: "center",
     justifyContent: "center",
-    width: 230,
-    height: 50,
+    width: 280,
+    height: 60,
     borderRadius: 10,
-    backgroundColor: colors.btnDefault,
+    borderWidth: 2,
+    borderColor: 'white',
+    margin: 10,
   },
   btnRowContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
+    alignItems: 'center',
+    marginTop:5,
   },
   btnLoginBg: {
     alignItems: "center",
     justifyContent: "center",
-    width: 112,
+    width: 130,
     height: 50,
-    borderRadius: 10,
-    backgroundColor: colors.btnLoginKakao,
-    marginTop: 5,
-    marginRight: 8,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: 'white',
+    marginRight: 20,
   },
   btnSignUpBg: {
     alignItems: "center",
     justifyContent: "center",
-    width: 112,
+    width: 130,
     height: 50,
-    borderRadius: 10,
-    backgroundColor: colors.btnLoginKakao,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: 'white',
     marginTop: 5,
+    fontSize:20,
   },
   btnStyle: {
     color: "white",
-    fontSize: 20,
+    fontSize: 22,
   },
+  gradient:{
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:'100%',
+    borderRadius: 10,
+  }
 });
