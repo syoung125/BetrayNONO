@@ -18,6 +18,7 @@ export default function GameResult() {
       </View>
       <View style={styles.optionContainer}>
         <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
+        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
       </View>
         
     </View>
@@ -28,8 +29,10 @@ function OptionResult({text, percentage, pNum, win=false}) {
   return (
       <View style={styles_optionResult.container}>
           <Text>{text}</Text>
-          <Text>{percentage}%</Text>
-          <Text>({pNum}명)</Text>
+          <View>
+            <Text>{percentage}%</Text>
+            <Text>({pNum}명)</Text>
+          </View>
       </View>
   );
 }
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     height: "10%",
     borderRadius: 7,
     justifyContent: "center",
-    alignItems: "left",
+    alignItems: "flex-start",
     marginTop: 10,
     marginRight: 12,
     marginLeft: 12,
@@ -69,23 +72,26 @@ const styles = StyleSheet.create({
     fontFamily: "NanumSquareRoundB",
   },
   optionContainer:{
-    flex: 1,
-    marginTop: 10
+    height: "30%",
+    marginTop: 10,
+    backgroundColor: 'blue',
+    justifyContent: "center"
   }
 })
 
 
 const styles_optionResult = StyleSheet.create({
   container:{
-    width: "1",
-    height: "15%",
+    flex: 1,
+    height: "35%",
     borderRadius: 7,
-    justifyContent: "center",
-    alignItems: "left",
-    marginTop: 10,
+    justifyContent: "space-between",
+    alignItems: "center",
     marginRight: 12,
     marginLeft: 12,
+    marginVertical: 5,
     padding: 24,
-    backgroundColor: "#40688F",
+    backgroundColor: "white",
+    flexDirection: "row"
   }
 })
