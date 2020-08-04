@@ -10,11 +10,16 @@ import { StatusBar } from "expo-status-bar";
 import colors from "../assets/colors";
 import strings from "../assets/string";
 import Logo from "../component/Logo";
+import { KeyboardAvoidingView } from "react-native";
 
 export default class SingUp extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior="position"
+        enabled
+      >
         <StatusBar style="auto" />
         <Logo />
         <View style={styles.mainContainer}>
@@ -41,7 +46,7 @@ export default class SingUp extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -49,6 +54,7 @@ export default class SingUp extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#59ADFF",
   },
   mainContainer: {
     flex: 1,

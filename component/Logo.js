@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import strings from "../assets/string";
 import images from "../assets/images";
-// import fonts from "../assets/Fonts";
 
 export default function Logo() {
   return (
@@ -22,7 +21,6 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   logoText: {
-    // fontFamily: fonts.logo,
     fontSize: 24,
     fontFamily: "Capriola-Regular",
     color: "white",
