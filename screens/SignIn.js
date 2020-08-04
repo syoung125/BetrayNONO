@@ -1,10 +1,10 @@
 import React from "react";
+import globalStyle from "../styles/Styles";
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  Button,
   TouchableOpacity,
   Dimensions,
   KeyboardAvoidingView,
@@ -15,7 +15,11 @@ import Logo from "../component/Logo";
 export default class Login extends React.Component {
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
+      <KeyboardAvoidingView
+        style={globalStyle.container}
+        behavior="height"
+        enabled
+      >
         <StatusBar style="auto" />
         <Logo />
         <View style={styles.mainContainer}>
@@ -69,13 +73,6 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    maxWidth: 448,
-    width: "100%",
-    backgroundColor: "#59ADFF",
-    margin: "auto",
-  },
   mainContainer: {
     flex: 1,
     backgroundColor: "#f6f6f6",

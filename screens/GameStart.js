@@ -1,4 +1,5 @@
 import React from "react";
+import globalStyle from "../styles/Styles";
 import {
   StyleSheet,
   Text,
@@ -9,7 +10,6 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import colors from "../assets/colors";
 import images from "../assets/images";
 import strings from "../assets/string";
 import Logo from "../component/Logo";
@@ -31,7 +31,7 @@ export default class GameStart extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={globalStyle.container}>
         {/* <LinearGradient colors={['#91eae4', '#86a8e7', '#7f7fd5']} 
                 style={styles.gContainer}
                 start={{ x: 0, y: 0 }}
@@ -88,11 +88,6 @@ export default class GameStart extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#59ADFF",
-    margin: "auto",
-  },
   gContainer: {
     flex: 1,
   },

@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import globalStyle from "../styles/Styles";
 import React, { useEffect, useState, useRef } from "react";
 import {
   StyleSheet,
@@ -27,7 +28,7 @@ const MyPage = ({ navigation }) => {
     navigation.navigate("GameStart");
   };
   return (
-    <View style={styles.container}>
+    <View style={globalStyle.container}>
       <LinearGradient
         colors={["#a1c4fd", "#a1c4fd", "#c2e9fb"]}
         style={{ flex: 1 }}
@@ -67,7 +68,6 @@ const MyPage = ({ navigation }) => {
                 <Text style={styles.item}>{item.key}</Text>
               )}
             />
-            
           </View>
           <Button title="Start Page" onPress={pressHandler}></Button>
         </View>
@@ -79,13 +79,6 @@ const MyPage = ({ navigation }) => {
 export default MyPage;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: Constants.statusBarHeight,
-    padding: 0,
-    width: 448,
-    margin: "auto",
-  },
   mainContainer: {
     flex: 1,
   },

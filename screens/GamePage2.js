@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import globalStyle from "../styles/Styles";
 import React, { useEffect, useState, useRef } from "react";
 import { StyleSheet, Text, View, Button, Animated } from "react-native";
 import Logo from "../component/Logo";
@@ -53,7 +54,7 @@ const GamePage2 = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyle.container}>
       <StatusBar style="auto" />
       {/* <Text style={styles.text}>Banana Dev</Text> */}
       <Logo />
@@ -96,12 +97,6 @@ const GamePage2 = ({ navigation }) => {
 export default GamePage2;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 0,
-    margin: "auto",
-    backgroundColor: "#59ADFF",
-  },
   mainContainer: {
     flex: 1,
   },
@@ -109,7 +104,7 @@ const styles = StyleSheet.create({
     width: "30%",
     height: "8%",
     marginLeft: 10,
-    backgroundColor: '#FF6A71',
+    backgroundColor: "#FF6A71",
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
@@ -123,14 +118,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 9,
     marginRight: 9,
-    backgroundColor: "#40688F"
+    backgroundColor: "#40688F",
   },
   timerContainer: {
     flex: 0.1,
     width: "100%",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center", 
+    alignItems: "center",
     paddingTop: 10,
   },
   alignContainer: {
@@ -140,7 +135,7 @@ const styles = StyleSheet.create({
   VSContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10
+    marginBottom: 10,
   },
   choiceContainer_Left: {
     width: "70%",
@@ -167,7 +162,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: "100%",
     alignItems: "flex-end",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   timerColumnFirst: {
     flex: 1,
@@ -185,14 +180,14 @@ const styles = StyleSheet.create({
   timerText: {
     fontSize: 16,
     fontWeight: "500",
-    fontFamily: "NanumSquareRoundB"
+    fontFamily: "NanumSquareRoundB",
   },
   qCountText: {
     fontSize: 15,
     fontWeight: "500",
     color: "white",
     justifyContent: "center",
-    fontFamily: "NanumSquareRoundB"
+    fontFamily: "NanumSquareRoundB",
   },
   VSText: {
     fontFamily: "NanumSquareRoundEB",
@@ -219,8 +214,6 @@ const styles = StyleSheet.create({
   text: {
     flex: 0.1,
     fontSize: 24,
-    fontFamily: "NanumSquareRoundB"
+    fontFamily: "NanumSquareRoundB",
   },
-
-
 });
