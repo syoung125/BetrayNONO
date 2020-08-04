@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "../component/Logo";
 import globalStyle from "../styles/Styles";
 import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import color from "../assets/colors";
 
 export default function GameResult() {
