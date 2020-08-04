@@ -22,6 +22,8 @@ export default function GameResult() {
           pNum={"1111"}
           win={true}
         ></OptionResult>
+        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
+        <OptionResult text={"하이하이"} percentage={"44"} pNum={"1111"} win={true}></OptionResult>
       </View>
     </View>
   );
@@ -34,6 +36,13 @@ function OptionResult({ text, percentage, pNum, win = false }) {
       <Text>{percentage}%</Text>
       <Text>({pNum}명)</Text>
     </View>
+      <View style={styles_optionResult.container}>
+          <Text>{text}</Text>
+          <View>
+            <Text>{percentage}%</Text>
+            <Text>({pNum}명)</Text>
+          </View>
+      </View>
   );
 }
 
@@ -83,9 +92,11 @@ const styles_optionResult = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
     marginTop: 10,
-    marginRight: 12,
-    marginLeft: 12,
-    padding: 24,
-    backgroundColor: "#40688F",
   },
-});
+  optionContainer:{
+    height: "30%",
+    marginTop: 10,
+    backgroundColor: 'blue',
+    justifyContent: "center",
+  },
+})
