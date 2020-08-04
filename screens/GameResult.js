@@ -28,13 +28,19 @@ export default function GameResult() {
 
 function OptionResult({text, percentage, pNum, win=false}) {
   return (
-      <View style={styles_optionResult.container}>
+      <View style={[styles_optionResult.container, {backgroundColor: win? color.lightRed: 'white'}]}>
           <View style={{flex: 3}}>
-            <Text style={styles_optionResult.optionText}>{text}</Text>
+            <Text style={[styles_optionResult.optionText, {color: win? "white": "black"}]}>{text}</Text>
           </View>
           <View style={{justifyContent: "center", alignItems:"center", flex: 1}}>
-            <Text style={styles_optionResult.percentageText}>{percentage}%</Text>
-            <Text style={styles_optionResult.pNumText}>({pNum}명)</Text>
+            <Text style={[styles_optionResult.percentageText,
+              {color: win? "white": color.lightRed}]}>
+              {percentage}%
+            </Text>
+            <Text style={[styles_optionResult.pNumText,
+              {color: win? "white": "#888888"}]}>
+              ({pNum}명)
+            </Text>
           </View>
       </View>
   );
@@ -99,7 +105,7 @@ const styles_optionResult = StyleSheet.create({
     fontSize: 18,
   },
   percentageText:{
-    fontSize: 36
+    fontSize: 32
   },
   pNumText:{
     fontSize: 12
