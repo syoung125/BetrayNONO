@@ -3,6 +3,7 @@ import GameStart from "./screens/GameStart";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./navigation/HomeStack";
+import GlobalFont from "react-native-global-font";
 
 const getFonts = async () =>
   await Font.loadAsync({
@@ -16,12 +17,10 @@ const getFonts = async () =>
   });
 
 export default function App() {
+  let fontName = "NanumSquareRoundR";
+  GlobalFont.applyGlobal(fontName);
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  // constructor(props) {
-  //   super(props);
-  // }
-  // gang
-  // chocopie
+
   if (fontsLoaded) {
     return (
       <Navigator>
