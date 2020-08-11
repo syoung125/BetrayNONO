@@ -3,6 +3,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import GameStart from "../screens/GameStart";
 import GamePage from "../screens/GamePage";
 import GameResult from "../screens/GameResult";
+import GameResult2 from "../screens/GameResult2";
 import SignIn from "../screens/SignIn";
 import SignUp from "../screens/SignUp";
 import MyPage from "../screens/MyPage";
@@ -18,6 +19,9 @@ const screens = {
   },
   GameResult: {
     screen: GameResult,
+  },
+  GameResult2: {
+    screen: GameResult2,
   },
   SignIn: {
     screen: SignIn,
