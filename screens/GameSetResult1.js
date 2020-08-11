@@ -23,10 +23,12 @@ const GameSetResult1 = ({ navigation }) => {
               <Text style={styles.contentText}>{strings.dummy.title}</Text>
             </ScrollView>
           </View>
-          <TouchableOpacity style={styles.shareBtn}>
-            <Image source={images.share} style={styles.shareImg}></Image>
-            <Text style={styles.shareText}>결과 공유</Text>
-          </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.shareBtn}>
+              <Image source={images.share} style={styles.shareImg}></Image>
+              <Text style={styles.shareText}>결과 공유</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -69,22 +71,27 @@ const styles = StyleSheet.create({
   },
   contentText: {
     fontSize: 15,
+    fontFamily: "NanumSquareRoundL",
   },
-  shareBtn: {
+  buttonContainer: {
     justifyContent: "center",
     alignItems: "center",
     width: "80%",
     height: "10%",
-    flex: 1,
+    backgroundColor: "red",
+    flexDirection: "column",
+    marginTop: 15,
+  },
+  shareBtn: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   shareImg: {
     width: 25,
     height: 25,
-    flex: 1,
   },
   shareText: {
     fontFamily: "NanumSquareRoundEB",
     fontSize: 15,
-    flex: 4,
   }
 });

@@ -5,6 +5,7 @@ const images = {
     like: require('../assets/images/heart.png'),
     history: require('../assets/images/list.png'),
     alarm: require('../assets/images/bell.png'),
+    share: require('../assets/images/share.png'),
 }
 
 export default images
