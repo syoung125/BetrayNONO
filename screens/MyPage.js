@@ -4,6 +4,13 @@ import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
 import globalStyle from "../styles/Styles";
+import GridList from 'react-native-grid-list';
+
+const games = [
+  { txt: '밸런스 게임', bgcolor: 'red' },
+  { txt: 'Coming Soon', bgcolor: 'blue' },
+  //{ txt: 'temp', bgcolor: 'yellow' },
+];
 
 const MyPage = ({ navigation }) => {
   const goToFollow = () => {
@@ -20,6 +27,13 @@ const MyPage = ({ navigation }) => {
   const handleHistoryBtn = () => {
     navigation.navigate("QuizList");
   };
+
+  const renderItem = ({ item, index }) => (
+    
+    <View style={styles.gameBox} >
+      <Text style={styles.gameText}>{item.txt}</Text>
+    </View>
+  );
 
   return (
     <View style={globalStyle.container}>
@@ -68,7 +82,13 @@ const MyPage = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.gameContainer}>
-          <Text>수정중이니까 신경쓰지마세여</Text>
+        <GridList
+            showSeparator
+            data={games}
+            numColumns={2}
+            renderItem={renderItem}
+           
+          />
         </View>
         <Button title="Start Page" onPress={handleStartB}></Button>
       </View>
@@ -82,7 +102,6 @@ export default MyPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //paddingTop: Constants.statusBarHeight,
     padding: 0,
     backgroundColor: "#59ADFF",
     margin: "auto",
@@ -92,7 +111,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   profileContainer: {
-    flex: 2,
+    flex: 1.8,
     width: "90%",
     backgroundColor: "#316da8",
     padding: 20,
@@ -129,14 +148,14 @@ const styles = StyleSheet.create({
     height: 20,
     marginTop: 6,
     borderRadius: 10,
-    alignItems: "center",
+    alignItems: "flex-start",
     paddingHorizontal: 3,
     justifyContent: "center",
   },
   levelbar: {
     backgroundColor: "#F06374",
     height: 16,
-    width: "100%",
+    width: "80%",
     borderRadius: 10,
   },
   settingContainer: {
@@ -147,7 +166,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "center",
-    //margin:10,
   },
   settingimg: {
     width: 26,
@@ -194,6 +212,22 @@ const styles = StyleSheet.create({
   gameContainer: {
     flex: 4,
     width: "90%",
-    backgroundColor: "red",
+    //alignItems:'center',
+    
+  },
+  gameBox: {
+    height:150,
+    width:160,
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'white',
+    borderRadius: 20,
+    margin: 10,
+    
+  },
+  gameText:{
+    color:'grey',
+    fontSize:20,
   },
 });
+
