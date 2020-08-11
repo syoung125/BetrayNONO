@@ -20,6 +20,11 @@
       "supportsTablet": true
     },
     "web": {
+      "build": {
+        "babel": {
+          "include": ["rn-sliding-up-panel", "static-container"]
+        }
+      },
       "favicon": "./assets/favicon.png"
     }
   }
