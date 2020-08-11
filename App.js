@@ -5,7 +5,7 @@ import GameStart from "./screens/GameStart";
 import Navigator from "./navigation/HomeStack";
 import GlobalFont from "react-native-global-font";
 
-const getFonts = async () =>
+const getFonts = async () => {
   await Font.loadAsync({
     "Capriola-Regular": { uri: require("./assets/fonts/Capriola-Regular.ttf") },
     NanumSquareRoundB: { uri: require("./assets/fonts/NanumSquareRoundB.ttf") },
@@ -14,11 +14,12 @@ const getFonts = async () =>
     },
     NanumSquareRoundL: { uri: require("./assets/fonts/NanumSquareRoundL.ttf") },
     NanumSquareRoundR: { uri: require("./assets/fonts/NanumSquareRoundR.ttf") },
-  });
+  }),
+    (fontName = "NanumSquareRoundR");
+  GlobalFont.applyGlobal(fontName);
+};
 
 export default function App() {
-  let fontName = "NanumSquareRoundR";
-  GlobalFont.applyGlobal(fontName);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {

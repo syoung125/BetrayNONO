@@ -1,19 +1,19 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import GameStart from "../screens/GameStart";
-import GamePage2 from "../screens/GamePage2";
+import GamePage from "../screens/GamePage";
 import GameResult from "../screens/GameResult";
 import SignIn from "../screens/SignIn";
 import SignUp from "../screens/SignUp";
-
 import MyPage from "../screens/MyPage";
+import QuizList from "../screens/QuizList";
 
 const screens = {
   GameStart: {
     screen: GameStart,
   },
   GamePage: {
-    screen: GamePage2,
+    screen: GamePage,
   },
   GameResult: {
     screen: GameResult,
@@ -27,10 +27,13 @@ const screens = {
   MyPage: {
     screen: MyPage,
   },
+  QuizList: {
+    screen: QuizList,
+  },
 };
 
 const HomeStack = createStackNavigator(screens, {
-  initialRouteName: "MyPage",
+  initialRouteName: "GameStart",
 });
 
 export default createAppContainer(HomeStack);

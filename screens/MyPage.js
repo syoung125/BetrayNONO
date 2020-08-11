@@ -13,9 +13,14 @@ const MyPage = ({ navigation }) => {
     //     info: 'information'
     // })
   };
-  const pressHandler = () => {
+  const handleStartB = () => {
     navigation.navigate("GameStart");
   };
+
+  const handleHistoryBtn = () => {
+    navigation.navigate("QuizList");
+  };
+
   return (
     <View style={globalStyle.container}>
       {/* <LinearGradient colors={["#a1c4fd", "#a1c4fd", "#c2e9fb"]} style={{ flex: 1 }}> */}
@@ -53,7 +58,9 @@ const MyPage = ({ navigation }) => {
           </View>
           <View style={styles.historyBox}>
             <Image source={images.history} style={styles.menuimg}></Image>
-            <Text style={[styles.boxText]}>History</Text>
+            <Text style={[styles.boxText]} onPress={handleHistoryBtn}>
+              History
+            </Text>
           </View>
           <View style={styles.menuBox}>
             <Image source={images.alarm} style={styles.menuimg}></Image>
@@ -63,7 +70,7 @@ const MyPage = ({ navigation }) => {
         <View style={styles.gameContainer}>
           <Text>수정중이니까 신경쓰지마세여</Text>
         </View>
-        <Button title="Start Page" onPress={pressHandler}></Button>
+        <Button title="Start Page" onPress={handleStartB}></Button>
       </View>
       {/* </LinearGradient> */}
     </View>
