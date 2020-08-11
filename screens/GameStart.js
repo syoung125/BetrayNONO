@@ -79,6 +79,14 @@ export default class GameStart extends React.Component {
                   <Text style={styles.btnStyle}>회원가입</Text>
                 </TouchableOpacity>
               </View>
+              <TouchableOpacity
+                style={styles.btnSignUpBg}
+                onPress={() => {
+                  this.props.navigation.navigate("MyPage");
+                }}
+              >
+                <Text style={styles.btnStyle}>MyPage</Text>
+              </TouchableOpacity>
             </View>
           )}
         </View>

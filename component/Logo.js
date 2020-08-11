@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     marginVertical: 8,
     paddingBottom: 8,
-    marginRight:10,
+    marginRight: 10,
   },
   logoText: {
     fontSize: 24,
