@@ -4,9 +4,7 @@ import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
 import globalStyle from "../styles/Styles";
-<<<<<<< HEAD
 import { TouchableOpacity } from "react-native-gesture-handler";
-=======
 import GridList from 'react-native-grid-list';
 
 const games = [
@@ -14,7 +12,6 @@ const games = [
   { txt: 'Coming Soon', bgcolor: 'blue' },
   //{ txt: 'temp', bgcolor: 'yellow' },
 ];
->>>>>>> 8191ea30c5e113ef82d5872671f30ac5dbceef2e
 
 const MyPage = ({ navigation }) => {
   const goToFollow = () => {

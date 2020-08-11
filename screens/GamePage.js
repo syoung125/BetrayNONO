@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import globalStyle from "../styles/Styles";
 import React, { useEffect, useState, useRef } from "react";
-import { StyleSheet, Text, View, Button, Animated } from "react-native";
+import { StyleSheet, Text, View, Button, Animated, TouchableOpacity } from "react-native";
 import Logo from "../component/Logo";
 import Question from "../component/question";
 import { Easing } from "react-native-reanimated";
@@ -24,7 +24,7 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-const GamePage2 = ({ navigation }) => {
+const GamePage = ({ navigation }) => {
   let animation = useRef(new Animated.Value(0));
 
   const [progress, setProgress] = useState(0);
@@ -52,7 +52,11 @@ const GamePage2 = ({ navigation }) => {
   });
 
   const pressHandler = () => {
-    navigation.push("GameResult");
+    navigation.push("GameResult", {
+      QUESTION_NUM: 1,
+      QUESTION_DATA: "gang",
+    }
+    );
   };
 
   return (
@@ -81,16 +85,16 @@ const GamePage2 = ({ navigation }) => {
             )}초`}</Text>
           </View>
         </View>
-        <View style={styles.choiceContainer_Left}>
+        <TouchableOpacity style={styles.choiceContainer_Left}>
           <Text>매일 아침, 밤에{"\n"}머리가 감겨져 있는 능력</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.VSContainer}>
           <Text style={styles.VSText}>VS</Text>
         </View>
         <View style={styles.alignContainer}>
-          <View style={styles.choiceContainer_Right}>
+          <TouchableOpacity style={styles.choiceContainer_Right}>
             <Text>식사 후에 항상{"\n"}양치질이 되어 있는 능력</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.bottomContainer}></View>
       </View>
@@ -99,7 +103,7 @@ const GamePage2 = ({ navigation }) => {
   );
 };
 
-export default GamePage2;
+export default GamePage;
 
 const styles = StyleSheet.create({
   mainContainer: {

@@ -9,6 +9,7 @@ import Comment from '../component/Comment';
 const {height} = Dimensions.get('window');
 
 export default class GameResult extends React.Component {
+
   render(){
     return (
       <View style={globalStyle.container}>
