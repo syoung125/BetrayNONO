@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../component/Logo";
 import globalStyle from "../styles/Styles";
-import { StyleSheet, Text, View, Button, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Button, Dimensions, TouchableOpacity } from "react-native";
 import color from "../assets/colors";
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import Comment from '../component/Comment';
@@ -40,9 +40,12 @@ export default class GameResult extends React.Component {
           showBackdrop={false}>
             <View style={styles.slidingPanel}>
               <View style={styles.bestCommentContainer}>
+                <Comment nickname="user1" text="댓글그륵르ㅡ를ㄹ" date="1일 전" show={false} isOption1={true}/>
                 <Comment nickname="user2" text="textttttttttttttttttttttttttttttttttttttt
-                ttttttttttttttttttttttttttttt" date="2일 전" isBest="true" isOption1="false"/>
-                <Comment nickname="user1" text="댓글그륵르ㅡ를ㄹ" date="1일 전" isBest="true"/>
+                ttttttttttttttttttttttttttttt" date="2일 전" show={false} isOption1={false}/>
+                <TouchableOpacity onPress={() => this._panel.show()}>
+                  <Text style={styles.moreCommentBtn}>댓글 더보기</Text>
+                </TouchableOpacity>
               </View>
             </View>
         </SlidingUpPanel>
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   nextBtn: {
-    height: "30%",
+    height: "20%",
     justifyContent: "center", 
     alignItems: "center", 
     backgroundColor: color.yellow
@@ -143,6 +146,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: 'center',
+  },
+  moreCommentBtn: {
+    color: '#686868',
+    fontSize: 14,
+    fontWeight: "800",
+    textDecorationLine: 'underline',
+    marginTop: 20
   }
 });
 
