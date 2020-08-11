@@ -1,14 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import globalStyle from "../styles/Styles";
-import React, { useEffect, useState, useRef } from "react";
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
-import Styles from "../styles/Styles";
+import globalStyle from "../styles/Styles";
 import strings from "../assets/string";
 
 const GameSetResult1 = ({ navigation }) => {
-
   return (
     <View style={globalStyle.container}>
       <StatusBar style="auto" />
@@ -34,7 +40,7 @@ const GameSetResult1 = ({ navigation }) => {
 };
 
 export default GameSetResult1;
-  
+
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
@@ -86,5 +92,5 @@ const styles = StyleSheet.create({
     fontFamily: "NanumSquareRoundEB",
     fontSize: 15,
     flex: 4,
-  }
+  },
 });

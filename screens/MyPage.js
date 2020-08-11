@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
 import globalStyle from "../styles/Styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const MyPage = ({ navigation }) => {
   const goToFollow = () => {
@@ -57,10 +58,13 @@ const MyPage = ({ navigation }) => {
             <Text style={[styles.boxText, { color: "red" }]}>123</Text>
           </View>
           <View style={styles.historyBox}>
-            <Image source={images.history} style={styles.menuimg}></Image>
-            <Text style={[styles.boxText]} onPress={handleHistoryBtn}>
-              History
-            </Text>
+            <TouchableOpacity
+              onPress={handleHistoryBtn}
+              style={styles.touchHistoryBox}
+            >
+              <Image source={images.history} style={styles.menuimg}></Image>
+              <Text style={[styles.boxText]}>History</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.menuBox}>
             <Image source={images.alarm} style={styles.menuimg}></Image>
@@ -179,11 +183,13 @@ const styles = StyleSheet.create({
   historyBox: {
     alignItems: "center",
     flex: 1,
-
     borderRightWidth: 0.5,
     borderRightColor: "lightgrey",
     borderLeftWidth: 0.5,
     borderLeftColor: "lightgrey",
+  },
+  touchHistoryBox: {
+    alignItems: "center",
   },
   boxText: {
     color: "grey",
