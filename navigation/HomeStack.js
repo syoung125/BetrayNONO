@@ -37,7 +37,7 @@ const screens = {
   },
   GameSetResult1: {
     screen: GameSetResult1,
-  }
+  },
 };
 
 const HomeStack = createStackNavigator(screens, {

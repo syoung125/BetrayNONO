@@ -4,11 +4,12 @@ import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
 import globalStyle from "../styles/Styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import GridList from 'react-native-grid-list';
 
 const games = [
-  { txt: '밸런스 게임', bgcolor: 'red' },
-  { txt: 'Coming Soon', bgcolor: 'blue' },
+  { txt: "밸런스 게임", bgcolor: "red" },
+  { txt: "Coming Soon", bgcolor: "blue" },
   //{ txt: 'temp', bgcolor: 'yellow' },
 ];
 
@@ -29,8 +30,7 @@ const MyPage = ({ navigation }) => {
   };
 
   const renderItem = ({ item, index }) => (
-    
-    <View style={styles.gameBox} >
+    <View style={styles.gameBox}>
       <Text style={styles.gameText}>{item.txt}</Text>
     </View>
   );
@@ -71,10 +71,13 @@ const MyPage = ({ navigation }) => {
             <Text style={[styles.boxText, { color: "red" }]}>123</Text>
           </View>
           <View style={styles.historyBox}>
-            <Image source={images.history} style={styles.menuimg}></Image>
-            <Text style={[styles.boxText]} onPress={handleHistoryBtn}>
-              History
-            </Text>
+            <TouchableOpacity
+              onPress={handleHistoryBtn}
+              style={styles.touchHistoryBox}
+            >
+              <Image source={images.history} style={styles.menuimg}></Image>
+              <Text style={[styles.boxText]}>History</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.menuBox}>
             <Image source={images.alarm} style={styles.menuimg}></Image>
@@ -82,12 +85,11 @@ const MyPage = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.gameContainer}>
-        <GridList
+          <GridList
             showSeparator
             data={games}
             numColumns={2}
             renderItem={renderItem}
-           
           />
         </View>
         <Button title="Start Page" onPress={handleStartB}></Button>
@@ -197,11 +199,13 @@ const styles = StyleSheet.create({
   historyBox: {
     alignItems: "center",
     flex: 1,
-
     borderRightWidth: 0.5,
     borderRightColor: "lightgrey",
     borderLeftWidth: 0.5,
     borderLeftColor: "lightgrey",
+  },
+  touchHistoryBox: {
+    alignItems: "center",
   },
   boxText: {
     color: "grey",
@@ -213,21 +217,18 @@ const styles = StyleSheet.create({
     flex: 4,
     width: "90%",
     //alignItems:'center',
-    
   },
   gameBox: {
-    height:150,
-    width:160,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:'white',
+    height: 150,
+    width: 160,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
     borderRadius: 20,
     margin: 10,
-    
   },
-  gameText:{
-    color:'grey',
-    fontSize:20,
+  gameText: {
+    color: "grey",
+    fontSize: 20,
   },
 });
-
