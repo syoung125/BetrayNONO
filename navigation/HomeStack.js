@@ -6,11 +6,8 @@ import GameResult from "../screens/GameResult";
 import SignIn from "../screens/SignIn";
 import SignUp from "../screens/SignUp";
 import MyPage from "../screens/MyPage";
-<<<<<<< HEAD
 import QuizList from "../screens/QuizList";
-=======
 import GameSetResult1 from "../screens/GameSetResult1";
->>>>>>> d130e4686841c6c307e0a91a999dfb8c8a23bffb
 
 const screens = {
   GameStart: {
@@ -34,6 +31,9 @@ const screens = {
   QuizList: {
     screen: QuizList,
   },
+  GameSetResult1: {
+    screen: GameSetResult1,
+  }
 };
 
 const HomeStack = createStackNavigator(screens, {
