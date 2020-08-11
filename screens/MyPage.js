@@ -8,8 +8,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import GridList from 'react-native-grid-list';
 
 const games = [
-  { txt: '밸런스 게임', bgcolor: 'red' },
-  { txt: 'Coming Soon', bgcolor: 'blue' },
+  { txt: "밸런스 게임", bgcolor: "red" },
+  { txt: "Coming Soon", bgcolor: "blue" },
   //{ txt: 'temp', bgcolor: 'yellow' },
 ];
 
@@ -30,8 +30,7 @@ const MyPage = ({ navigation }) => {
   };
 
   const renderItem = ({ item, index }) => (
-    
-    <View style={styles.gameBox} >
+    <View style={styles.gameBox}>
       <Text style={styles.gameText}>{item.txt}</Text>
     </View>
   );
@@ -86,12 +85,11 @@ const MyPage = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.gameContainer}>
-        <GridList
+          <GridList
             showSeparator
             data={games}
             numColumns={2}
             renderItem={renderItem}
-           
           />
         </View>
         <Button title="Start Page" onPress={handleStartB}></Button>
@@ -219,21 +217,18 @@ const styles = StyleSheet.create({
     flex: 4,
     width: "90%",
     //alignItems:'center',
-    
   },
   gameBox: {
-    height:150,
-    width:160,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:'white',
+    height: 150,
+    width: 160,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
     borderRadius: 20,
     margin: 10,
-    
   },
-  gameText:{
-    color:'grey',
-    fontSize:20,
+  gameText: {
+    color: "grey",
+    fontSize: 20,
   },
 });
-

@@ -4,6 +4,7 @@ import { AppLoading } from "expo";
 import GameStart from "./screens/GameStart";
 import Navigator from "./navigation/HomeStack";
 import GlobalFont from "react-native-global-font";
+import { HashRouter, Route } from "react-router-dom";
 
 const getFonts = async () => {
   await Font.loadAsync({
@@ -24,9 +25,11 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <Navigator>
-        <GameStart />
-      </Navigator>
+      <HashRouter>
+        <Navigator>
+          <Route path="/" exact={true} component={GameStart} />
+        </Navigator>
+      </HashRouter>
     );
   } else {
     return (
