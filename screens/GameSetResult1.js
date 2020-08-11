@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import Logo from "../component/Logo";
 import images from "../assets/images";
-import globalStyle from "../styles/Styles";
 import strings from "../assets/string";
 
 const GameSetResult1 = ({ navigation }) => {
