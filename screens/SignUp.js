@@ -63,6 +63,8 @@ export default class SignUp extends React.Component {
 
     // 비어있는지 체크, 닉네임 중복인지 체크
     // insertUser(id, password, nickname);
+
+    this.props.navigation.navigate("GameStart");  // 홈으로
   }
 
   insertUser(id, password, nickname){
